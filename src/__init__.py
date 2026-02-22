@@ -12,6 +12,11 @@ def create_app():
     try:
         from .routes import register_routes
         register_routes(app)
+        
+        
+        from src.routes.youtube_routes import youtube_bp
+        app.register_blueprint(youtube_bp)
+        
     except Exception:
         pass
 
